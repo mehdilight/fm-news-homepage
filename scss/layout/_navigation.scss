@@ -3,4 +3,74 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    &__navigator {
+        display: none;
+        padding: 25px;
+        z-index: 20;
+        position: fixed;
+        background: white;
+        right: -256px;
+        top: 0;
+        bottom: 0;
+        animation-name: displayNavigation;
+        animation-duration: .3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+        width: 256px;
+
+        &__header {
+            display: flex;
+            justify-content: end;
+            margin-bottom: 90px;
+            &__button {
+                svg {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+        }
+
+        &__items {
+            li:not(:last-child) .navbar__navigator__item {
+                margin-bottom: 30px;
+            }
+        }
+
+        &__item {
+            display: inline-block;
+            color: var(--very-dark-blue);
+            font-size: 18px;
+        }
+
+        &__overlay {
+            display: none;
+            z-index: 10;
+            content: "";
+            position: fixed;
+            background: rgba(0, 0, 26, 0.6);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            &--active {
+                display: block;
+            }
+        }
+
+        &--active {
+            display: block;
+        }
+    }
+}
+
+@keyframes displayNavigation {
+    from {
+        right: -256px;
+    }
+
+    to {
+        right: 0;
+    }
 }

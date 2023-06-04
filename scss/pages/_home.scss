@@ -2,19 +2,62 @@
     padding: 16px;
     display: grid;
     gap: 60px;
+
+    @include tablet {
+        grid-template-columns: 1fr 350px;
+    }
 }
 
 .hero {
     display: grid;
-    gap: 22px;
-    &__heading {
-        font-size: 20px;
-        font-weight: 700;
-        font-size: 42px;
+
+    &__body {
+        display: grid;
+        gap: 22px;
+
+        @include tablet {
+            margin-top: 30px;
+        }
+
+        @include tablet {
+            gap: 90px;
+        }
+
+        @include tablet {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+
+            &>*:first-child {
+                margin-bottom: 22px;
+            }
+
+            @include tablet {
+                justify-content: space-between;
+            }
+        }
+
+        &__heading {
+            font-size: 20px;
+            font-weight: 700;
+            font-size: 42px;
+            font-weight: 700;
+
+            @include tablet {
+                font-size: 55px;
+                line-height: 60px;
+            }
+        }
+
+        &__paragraph {
+            font-size: 15px;
+            color: var(--dark-graynish-blue);
+        }
     }
-    &__paragraph {
-        color: var(--dark-graynish-blue);
-    }
+
     &__image {
         width: 100%;
     }
@@ -23,19 +66,23 @@
 .news-card {
     padding: 20px;
     background-color: var(--very-dark-blue);
+
     &__heading {
         color: var(--soft-orange-color);
         font-weight: 700;
         font-size: 30px;
     }
+
     &__item {
         padding: 20px 0;
+
         &-heading {
             color: var(--off-white-color);
             margin-bottom: 12px;
             font-size: 20px;
             font-weight: 700;
         }
+
         &-paragraph {
             font-size: 16px;
             color: var(--graynish-blue);
@@ -62,9 +109,11 @@
 
 .post-card {
     display: flex;
+
     &__image {
         width: 100px;
     }
+
     &__body {
         margin-left: 20px;
         display: flex;
@@ -83,6 +132,7 @@
         }
 
         &__paragraph {
+            font-size: 15px;
             color: var(--dark-graynish-blue);
             line-height: 22px;
         }
@@ -92,4 +142,9 @@
 .post-cards {
     display: grid;
     gap: 30px;
+
+    @include tablet {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column: span 2 / span 2;
+    }
 }
