@@ -8,4 +8,10 @@
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 4px;
+
+    &:hover,
+    &:focus {
+        background-color: var(--very-dark-blue);
+        color: var(--off-white-color);
+    }
 }

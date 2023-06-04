@@ -10,6 +10,7 @@
 
 .hero {
     display: grid;
+    gap: 28px;
 
     &__body {
         display: grid;
@@ -18,12 +19,12 @@
         @include tablet {
             margin-top: 30px;
         }
-
-        @include tablet {
+        
+        @include desktop {
             gap: 90px;
         }
 
-        @include tablet {
+        @include desktop {
             grid-template-columns: 1fr 1fr;
         }
 
@@ -67,10 +68,18 @@
     padding: 20px;
     background-color: var(--very-dark-blue);
 
+    @include tablet {
+        padding: 30px;
+    }
+
     &__heading {
         color: var(--soft-orange-color);
         font-weight: 700;
         font-size: 30px;
+
+        @include tablet {
+            font-size: 38px;
+        }
     }
 
     &__item {
@@ -139,6 +148,15 @@
     }
 }
 
+.post-card {
+    &-anchor:hover,
+    &-anchor:focus {
+        .post-card__body__heading {
+            color: var(--soft-red-color);
+        }
+    }
+}
+
 .post-cards {
     display: grid;
     gap: 30px;
@@ -147,4 +165,6 @@
         grid-template-columns: repeat(3, 1fr);
         grid-column: span 2 / span 2;
     }
+
+    
 }
