@@ -4,6 +4,19 @@
     align-items: center;
     justify-content: space-between;
 
+    @include tablet {
+        padding: 58px 16px;
+    }
+
+    &__logo {
+        svg {
+            @include tablet {
+                width: 64.29px;
+                height: 40px;
+            }
+        }
+    }
+
     &__button {
         @include tablet {
             display: none;

@@ -5,6 +5,7 @@
 
     @include tablet {
         grid-template-columns: 1fr 350px;
+        gap: 60px 30px;
     }
 }
 
